@@ -1,5 +1,5 @@
-import { MouseEventHandler } from "react";
-import { PaymentTypeContainer } from "./style";
+import { MouseEventHandler, useEffect, useState } from "react";
+import { PaymentTypeContainer, SelectedCard } from "./style";
 
 interface IPaymentType {
   title: string;
@@ -14,10 +14,31 @@ export default function PaymentType({
   onClick,
   selected,
 }: IPaymentType) {
+  const [titleCrad, setTitleCard] = useState("");
+
+  useEffect(() => {
+    if (title === "credit") {
+      setTitleCard("Cartão de crédito");
+    } else if (title === "debit") {
+      setTitleCard("Cartão de débito");
+    } else {
+      setTitleCard("Dinheiro");
+    }
+  }, []);
+
   return (
-    <PaymentTypeContainer onClick={onClick}>
-      <img src={image} alt={title} />
-      <span>{title}</span>
-    </PaymentTypeContainer>
+    <>
+      {selected === title ? (
+        <SelectedCard onClick={onClick} className="selectedCard">
+          <img src={image} alt={titleCrad} />
+          <span>{titleCrad}</span>
+        </SelectedCard>
+      ) : (
+        <PaymentTypeContainer onClick={onClick} className="selectedCard">
+          <img src={image} alt={titleCrad} />
+          <span>{titleCrad}</span>
+        </PaymentTypeContainer>
+      )}
+    </>
   );
 }

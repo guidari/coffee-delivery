@@ -57,11 +57,11 @@ export default function CartPreview() {
         </CartTotalPrice>
       </CartPreviewPriceSummary>
 
-      <Link to="/orderInfo">
-        <CartConfirmButton>
-          <p>confirmar pedido</p>
-        </CartConfirmButton>
-      </Link>
+      {/* <Link to="/orderInfo"> */}
+      <CartConfirmButton type="submit">
+        <p>confirmar pedido</p>
+      </CartConfirmButton>
+      {/* </Link> */}
     </CartPreviewContainer>
   );
 }

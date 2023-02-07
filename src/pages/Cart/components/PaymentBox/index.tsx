@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { Instrunctions } from "../AdressSectionBox/style";
 import PaymentType from "../PaymentType";
 import { PaymentBoxContainer, PaymentTypes } from "./style";
 
 export default function PaymentBox() {
+  const [cardSelected, setcCardSelected] = useState("");
+
+  function changeCard(cardType: string) {
+    setcCardSelected(cardType);
+  }
+
   return (
     <PaymentBoxContainer>
       <Instrunctions>
@@ -17,19 +24,22 @@ export default function PaymentBox() {
 
       <PaymentTypes>
         <PaymentType
-          title="cartão de crédito"
+          title="credit"
           image="/src/assets/images/creditCard.svg"
-          onClick={() => console.log("Pagamento")}
+          onClick={() => changeCard("credit")}
+          selected={cardSelected}
         />
         <PaymentType
-          title="cartão de débito"
+          title="debit"
           image="/src/assets/images/creditCard.svg"
-          onClick={() => console.log("Pagamento")}
+          onClick={() => changeCard("debit")}
+          selected={cardSelected}
         />
         <PaymentType
-          title="dinherio"
+          title="cash"
           image="/src/assets/images/creditCard.svg"
-          onClick={() => console.log("Pagamento")}
+          onClick={() => changeCard("cash")}
+          selected={cardSelected}
         />
       </PaymentTypes>
     </PaymentBoxContainer>

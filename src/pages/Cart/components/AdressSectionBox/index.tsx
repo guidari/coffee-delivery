@@ -1,3 +1,4 @@
+import { useFormContext } from "react-hook-form";
 import InputAdress from "../../../../components/InputAdress";
 import {
   AdressBoxContainer,
@@ -9,6 +10,11 @@ import {
 } from "./style";
 
 export default function AdressBox() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <AdressBoxContainer>
       <Instrunctions>
@@ -21,17 +27,22 @@ export default function AdressBox() {
 
       <AdressForm>
         <Grid1>
-          <InputAdress placeholder="CEP" />
+          <InputAdress placeholder="CEP" registerName="cep" type="number" />
         </Grid1>
-        <InputAdress placeholder="Rua" />
+        <InputAdress placeholder="Rua" registerName="street" />
+
         <Grid2>
-          <InputAdress placeholder="Número" />
-          <InputAdress placeholder="Complemento" />
+          <InputAdress
+            placeholder="Número"
+            registerName="homeNumber"
+            type="number"
+          />
+          <InputAdress placeholder="Complemento" registerName="spotTip" />
         </Grid2>
         <Grid3>
-          <InputAdress placeholder="Bairro" />
-          <InputAdress placeholder="Cidade" />
-          <InputAdress placeholder="UF" />
+          <InputAdress placeholder="Bairro" registerName="neighborhood" />
+          <InputAdress placeholder="Cidade" registerName="city" />
+          <InputAdress placeholder="UF" registerName="uf" />
         </Grid3>
       </AdressForm>
     </AdressBoxContainer>
