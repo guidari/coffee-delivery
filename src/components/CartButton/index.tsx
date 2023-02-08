@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../context/ShoppingCartContext";
 import { ButtonCart, ItemsAmount } from "./style";
 
+import cartImage from "../../assets/images/cart.svg";
+
 interface ICartButton {
   image?: string;
   onClick?: any;
@@ -17,7 +19,7 @@ export default function CartButton({ image, onClick }: ICartButton) {
           <span>{cart.length}</span>
         </ItemsAmount>
       )}
-      <img src="/src/assets/images/cart.svg" alt="" />
+      <img src={cartImage} alt="carrinho" />
     </ButtonCart>
   );
 }

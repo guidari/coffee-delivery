@@ -19,6 +19,8 @@ import {
   CoffeeTagsContainer,
 } from "./style";
 
+import PurpleCart from "../../../../assets/images/assets/images/purpleCart.svg";
+
 interface ICoffee {
   id: number;
   name: string;
@@ -128,7 +130,7 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
             max={99}
           />
           <button onClick={hanldeAddToShoppingCart}>
-            <img src="/src/assets/images/purpleCart.svg" alt="" />
+            <img src={PurpleCart} alt="Carrinho" />
           </button>
         </CartQuantityContainer>
       </OrderPirceContainer>

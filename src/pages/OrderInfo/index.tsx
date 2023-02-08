@@ -6,6 +6,11 @@ import {
   TextContainer,
 } from "./style";
 
+import LocationDelivery from "../../assets/images/locationDelivery.svg";
+import Timer from "../../assets/images/timer.svg";
+import MoneyDelivery from "../../assets/images/moneyDelivery.svg";
+import BikeDelivery from "../../assets/images/bikeDelivery.svg";
+
 export default function OrderInfo() {
   const cardTye = localStorage.getItem("coffeeDelivery-cardType");
   const street = localStorage.getItem("coffeeDelivery-street");
@@ -23,7 +28,7 @@ export default function OrderInfo() {
         <SummaryContainer>
           <TextContainer>
             <img
-              src="/src/assets/images/locationDelivery.svg"
+              src={LocationDelivery}
               alt="Localização"
               width="32px"
               height="32px"
@@ -42,12 +47,7 @@ export default function OrderInfo() {
           </TextContainer>
 
           <TextContainer>
-            <img
-              src="/src/assets/images/timer.svg"
-              alt="Localização"
-              width="32px"
-              height="32px"
-            />
+            <img src={Timer} alt="Localização" width="32px" height="32px" />
             <div>
               <p>Previsão de entrega</p>
               <span>20 min - 30 min</span>
@@ -56,8 +56,8 @@ export default function OrderInfo() {
 
           <TextContainer>
             <img
-              src="/src/assets/images/moneyDelivery.svg"
-              alt="Localização"
+              src={MoneyDelivery}
+              alt="Dinheiro verde"
               width="32px"
               height="32px"
             />
@@ -76,7 +76,7 @@ export default function OrderInfo() {
       </LeftContainer>
       <RightContainer>
         <div></div>
-        <img src="/src/assets/images/bikeDelivery.svg" alt="Localização" />
+        <img src={BikeDelivery} alt="Entregar montado em uma bicicleta" />
       </RightContainer>
     </OrderInfoContainer>
   );

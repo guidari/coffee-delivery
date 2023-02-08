@@ -9,13 +9,15 @@ import {
   Grid1,
 } from "./style";
 
+import LocationYellowLine from "../../../../assets/images/locationYellowLine.svg";
+
 export default function AdressBox() {
   const cardTye = localStorage.getItem("coffeeDelivery-cardType");
 
   return (
     <AdressBoxContainer>
       <Instrunctions>
-        <img src="/src/assets/images/locationYellowLine.svg" />
+        <img src={LocationYellowLine} />
         <div>
           <h3>Endereço de Entrega</h3>
           <p>Informe o endereço onde deseja receber seu pedido</p>

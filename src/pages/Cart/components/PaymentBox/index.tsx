@@ -3,6 +3,11 @@ import { Instrunctions } from "../AdressSectionBox/style";
 import PaymentType from "../PaymentType";
 import { PaymentBoxContainer, PaymentTypes } from "./style";
 
+import Money from "../../../../assets/images/money.svg";
+import CreditCard from "../../../../assets/images/creditCard.svg";
+import DebitCard from "../../../../assets/images/debitCard.svg";
+import Cash from "../../../../assets/images/cash.svg";
+
 export default function PaymentBox() {
   const [cardSelected, setcCardSelected] = useState("credit");
 
@@ -14,7 +19,7 @@ export default function PaymentBox() {
   return (
     <PaymentBoxContainer>
       <Instrunctions>
-        <img src="/src/assets/images/money.svg" />
+        <img src={Money} />
         <div>
           <h3>Pagamento</h3>
           <p>
@@ -26,19 +31,19 @@ export default function PaymentBox() {
       <PaymentTypes>
         <PaymentType
           title="credit"
-          image="/src/assets/images/creditCard.svg"
+          image={CreditCard}
           onClick={() => changeCard("credit")}
           selected={cardSelected}
         />
         <PaymentType
           title="debit"
-          image="/src/assets/images/creditCard.svg"
+          image={DebitCard}
           onClick={() => changeCard("debit")}
           selected={cardSelected}
         />
         <PaymentType
           title="cash"
-          image="/src/assets/images/creditCard.svg"
+          image={Cash}
           onClick={() => changeCard("cash")}
           selected={cardSelected}
         />

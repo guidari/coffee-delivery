@@ -10,6 +10,12 @@ import {
   Title,
 } from "./style";
 
+import CartCircle from "../../assets/images/cartCircle.svg";
+import Package from "../../assets/images/package.svg";
+import Timer from "../../assets/images/timer.svg";
+import CoffeeCircle from "../../assets/images/coffeeCircle.svg";
+import Banner from "../../assets/images/Banner.svg";
+
 export default function Home() {
   return (
     <HomeContainer>
@@ -21,26 +27,20 @@ export default function Home() {
             hora
           </SubTitle>
           <InfoCoffeeGrid>
-            <InfoTextGrid
-              title="Compra simples e segura"
-              image="/src/assets/images/cartCircle.svg"
-            />
+            <InfoTextGrid title="Compra simples e segura" image={CartCircle} />
             <InfoTextGrid
               title="Embalagem mantém o café intacto"
-              image="/src/assets/images/package.svg"
+              image={Package}
             />
-            <InfoTextGrid
-              title="Entrega rápida e rastreada"
-              image="/src/assets/images/timer.svg"
-            />
+            <InfoTextGrid title="Entrega rápida e rastreada" image={Timer} />
             <InfoTextGrid
               title="O café chega fresquinho até você"
-              image="/src/assets/images/coffeeCircle.svg"
+              image={CoffeeCircle}
             />
           </InfoCoffeeGrid>
         </div>
         <div>
-          <img src="/src/assets/images/banner.svg" alt="" />
+          <img src={Banner} alt="" />
         </div>
       </InfoContainer>
       <h2>Nossos cafés</h2>

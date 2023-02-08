@@ -5,6 +5,9 @@ import Button from "../Button";
 import CartButton from "../CartButton";
 import { HeaderCart, HeaderContainer, Logo } from "./style";
 
+import LogoImage from "../../assets/images/Logo.svg";
+import Location from "../../assets/images/Location.svg";
+
 export default function Header() {
   const { cart } = useContext(ShoppingCartContext);
 
@@ -15,11 +18,11 @@ export default function Header() {
   return (
     <HeaderContainer>
       <NavLink to={"/"}>
-        <Logo src="/src/assets/images/Logo.svg" alt="teste" />
+        <Logo src={LogoImage} alt="teste" />
       </NavLink>
 
       <HeaderCart>
-        <Button title="São Paulo, SP" image="/src/assets/images/Location.svg" />
+        <Button title="São Paulo, SP" image={Location} />
 
         {cart.length < 1 ? (
           <CartButton onClick={warning} />
