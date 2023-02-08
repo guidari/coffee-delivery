@@ -27,4 +27,7 @@ export const BoxSection = styled.div`
   border-radius: 8px;
   padding: 40px;
   margin-bottom: 12px;
+  @media only screen and (max-width: 992px) {
+    padding: 20px;
+  }
 `;

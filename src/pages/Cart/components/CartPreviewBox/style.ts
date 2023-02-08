@@ -5,6 +5,10 @@ export const CartPreviewContainer = styled.div`
   border-radius: 6px 44px;
   padding: 40px;
   margin-bottom: 12px;
+
+  @media only screen and (max-width: 992px) {
+    padding: 20px;
+  }
 `;
 
 export const EmptyCart = styled.h3`

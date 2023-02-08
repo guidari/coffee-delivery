@@ -8,11 +8,11 @@ export const InfoContainer = styled.div`
 
   gap: 50px;
 
-  margin: 100px auto;
+  margin: 50px auto;
 
   @media only screen and (max-width: 992px) {
     flex-direction: column;
-    margin: 50px auto;
+    margin: 30px auto;
   }
 `;
 
@@ -37,6 +37,10 @@ export const Title = styled.h1`
   color: ${(props) => props.theme["base-title"]};
 
   margin-bottom: 16px;
+
+  @media only screen and (max-width: 992px) {
+    font-size: 36px;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -54,6 +58,10 @@ export const SubTitle = styled.h3`
   color: ${(props) => props.theme["base-subtitle"]};
 
   margin-bottom: 66px;
+
+  @media only screen and (max-width: 992px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const InfoCoffeeGrid = styled.div`
