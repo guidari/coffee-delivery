@@ -10,10 +10,7 @@ import {
 } from "./style";
 
 export default function AdressBox() {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const cardTye = localStorage.getItem("coffeeDelivery-cardType");
 
   return (
     <AdressBoxContainer>

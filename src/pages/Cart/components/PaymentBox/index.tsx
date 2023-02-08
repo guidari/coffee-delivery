@@ -4,10 +4,11 @@ import PaymentType from "../PaymentType";
 import { PaymentBoxContainer, PaymentTypes } from "./style";
 
 export default function PaymentBox() {
-  const [cardSelected, setcCardSelected] = useState("");
+  const [cardSelected, setcCardSelected] = useState("credit");
 
   function changeCard(cardType: string) {
     setcCardSelected(cardType);
+    localStorage.setItem("coffeeDelivery-cardType", cardType);
   }
 
   return (

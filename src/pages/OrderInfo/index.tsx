@@ -7,6 +7,13 @@ import {
 } from "./style";
 
 export default function OrderInfo() {
+  const cardTye = localStorage.getItem("coffeeDelivery-cardType");
+  const street = localStorage.getItem("coffeeDelivery-street");
+  const homeNumber = localStorage.getItem("coffeeDelivery-homeNumber");
+  const neighborhood = localStorage.getItem("coffeeDelivery-neighborhood");
+  const city = localStorage.getItem("coffeeDelivery-city");
+  const uf = localStorage.getItem("coffeeDelivery-uf");
+
   return (
     <OrderInfoContainer>
       <LeftContainer>
@@ -23,9 +30,14 @@ export default function OrderInfo() {
             />
             <div>
               <p>
-                Entrega em <span>Rua João Daniel Martinelli, 102</span>
+                Entrega em{" "}
+                <span>
+                  {street}, {homeNumber}
+                </span>
               </p>
-              <p>Farrapos - Porto Alegre, RS</p>
+              <p>
+                {neighborhood} - {city}, {uf}
+              </p>
             </div>
           </TextContainer>
 
@@ -51,7 +63,13 @@ export default function OrderInfo() {
             />
             <div>
               <p>Pagamento na entrega</p>
-              <span>Cartão de crédito</span>
+              <span>
+                {cardTye === "credit"
+                  ? "Cartão de crédito"
+                  : cardTye === "debit"
+                  ? "Cartão de débito"
+                  : "Dinheiro"}
+              </span>
             </div>
           </TextContainer>
         </SummaryContainer>

@@ -5,33 +5,40 @@ import PaymentBox from "./components/PaymentBox";
 import { BoxSection, CartContainer, Title } from "./style";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
+import { useNavigate } from "react-router-dom";
 
 const adressFormValidation = zod
   .object({
     cep: zod.string().min(1, "Informe o CEP"),
     street: zod.string().min(1, "Informe o rua"),
-    homeNumber: zod.string(),
+    homeNumber: zod.string().min(1, "Informe o número"),
     spotTip: zod.string(),
-    neighborhood: zod.string(),
-    city: zod.string(),
-    uf: zod.string(),
+    neighborhood: zod.string().min(1, "Informe o bairro"),
+    city: zod.string().min(1, "Informe a cidade"),
+    uf: zod.string().min(1, "Informe a UF"),
   })
   .required();
 
 type NewCycleFormData = zod.infer<typeof adressFormValidation>;
 
 export default function Cart() {
+  const navigate = useNavigate();
+
   const adressForm = useForm<NewCycleFormData>({
     resolver: zodResolver(adressFormValidation),
   });
 
-  // const { handleSubmit } = useFormContext();
-
   console.log("errors", adressForm.formState.errors);
 
-  function confirmOrder(values: any) {
-    alert("chama");
-    console.log("pedido confirmado", values);
+  function confirmOrder(values: NewCycleFormData) {
+    localStorage.setItem("coffeeDelivery-cep", values.cep);
+    localStorage.setItem("coffeeDelivery-street", values.street);
+    localStorage.setItem("coffeeDelivery-homeNumber", values.homeNumber);
+    localStorage.setItem("coffeeDelivery-neighborhood", values.neighborhood);
+    localStorage.setItem("coffeeDelivery-city", values.city);
+    localStorage.setItem("coffeeDelivery-uf", values.uf);
+
+    navigate("/orderInfo");
   }
 
   return (
