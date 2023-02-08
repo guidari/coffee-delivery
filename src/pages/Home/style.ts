@@ -16,6 +16,14 @@ export const InfoContainer = styled.div`
   }
 `;
 
+export const BannerContainer = styled.div`
+  @media only screen and (max-width: 992px) {
+    img {
+      width: 320px;
+    }
+  }
+`;
+
 export const Title = styled.h1`
   font-style: normal;
   font-weight: 800;

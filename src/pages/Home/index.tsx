@@ -2,6 +2,7 @@ import { coffeesList } from "../../api/coffeeMock";
 import CoffeeCard from "./components/CoffeeCard";
 import InfoTextGrid from "./components/InfoTextGrid";
 import {
+  BannerContainer,
   CoffeesGird,
   HomeContainer,
   InfoCoffeeGrid,
@@ -39,9 +40,9 @@ export default function Home() {
             />
           </InfoCoffeeGrid>
         </div>
-        <div>
+        <BannerContainer>
           <img src={Banner} alt="" />
-        </div>
+        </BannerContainer>
       </InfoContainer>
       <h2>Nossos cafés</h2>
 

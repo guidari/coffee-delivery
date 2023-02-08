@@ -10,7 +10,7 @@ export const OrderInfoContainer = styled.div`
 
 export const LeftContainer = styled.div`
   width: 100%;
-  min-width: 450px;
+  /* min-width: 450px; */
   max-width: 500px;
 
   h1 {
@@ -39,6 +39,10 @@ export const SummaryContainer = styled.div`
 
   border: 1px solid ${(props) => props.theme["yellow-dark"]};
   border-radius: 6px 36px;
+
+  @media only screen and (max-width: 992px) {
+    padding: 20px;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -78,7 +82,7 @@ export const RightContainer = styled.div`
     height: 293px;
 
     @media only screen and (max-width: 992px) {
-      width: 400px;
+      width: 320px;
     }
   }
 `;

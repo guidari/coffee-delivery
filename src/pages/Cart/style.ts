@@ -3,10 +3,13 @@ import styled from "styled-components";
 export const CartContainer = styled.div`
   display: grid;
   grid-template-columns: 6fr 4fr;
+  /* width: 100%; */
 
   gap: 32px;
 
   @media only screen and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 1fr;
   }
 `;

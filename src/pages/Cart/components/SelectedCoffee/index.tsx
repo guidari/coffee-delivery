@@ -7,6 +7,7 @@ import { ShoppingCartContext } from "../../../../context/ShoppingCartContext";
 import { formatToBRCashString } from "../../../../utils/formatCashString";
 import {
   ActionButtonsContainer,
+  ContainerNamePrice,
   InfoContainer,
   RemoveCoffee,
   SelectedCoffeeContainer,
@@ -91,7 +92,12 @@ export default function SelectedCoffee({
         <img src={image} alt={name} />
       </SelectedCoffeeImage>
       <InfoContainer>
-        <SelectedQuantityCoffee>{name}</SelectedQuantityCoffee>
+        <ContainerNamePrice>
+          <SelectedQuantityCoffee>{name}</SelectedQuantityCoffee>
+          <SelectedPriceCoffee>
+            <span> R$ {formatToBRCashString(coffeePrice)}</span>
+          </SelectedPriceCoffee>
+        </ContainerNamePrice>
 
         <ActionButtonsContainer>
           <InputCount
@@ -108,9 +114,7 @@ export default function SelectedCoffee({
           </RemoveCoffee>
         </ActionButtonsContainer>
       </InfoContainer>
-      <SelectedPriceCoffee>
-        {formatToBRCashString(coffeePrice)}
-      </SelectedPriceCoffee>
+
       {visibleAlert && (
         <AlertMessage
           message={messageAlert}
