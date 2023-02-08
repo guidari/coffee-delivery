@@ -19,7 +19,7 @@ import {
   CoffeeTagsContainer,
 } from "./style";
 
-import PurpleCart from "../../../../assets/images/assets/images/purpleCart.svg";
+import PurpleCart from "../../../../assets/images/purpleCart.svg";
 
 interface ICoffee {
   id: number;

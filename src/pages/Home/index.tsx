@@ -14,7 +14,7 @@ import CartCircle from "../../assets/images/cartCircle.svg";
 import Package from "../../assets/images/package.svg";
 import Timer from "../../assets/images/timer.svg";
 import CoffeeCircle from "../../assets/images/coffeeCircle.svg";
-import Banner from "../../assets/images/Banner.svg";
+import Banner from "../../assets/images/banner.svg";
 
 export default function Home() {
   return (
