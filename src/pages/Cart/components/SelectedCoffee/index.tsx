@@ -1,6 +1,7 @@
 import { Trash } from "phosphor-react";
 import { useContext, useState } from "react";
 import Cart from "../..";
+import AlertMessage from "../../../../components/AlertMessage";
 import { InputCount } from "../../../../components/InputCount";
 import { ShoppingCartContext } from "../../../../context/ShoppingCartContext";
 import { formatToBRCashString } from "../../../../utils/formatCashString";
@@ -30,9 +31,10 @@ export default function SelectedCoffee({
   quantity,
 }: ISelectedCoffee) {
   const [count, setCount] = useState(quantity);
+  const [messageAlert, setMessageAlert] = useState("");
+  const [visibleAlert, setVisibleAlert] = useState(false);
 
-  const { cart, removeCoffee, insertMoreCoffee } =
-    useContext(ShoppingCartContext);
+  const { removeCoffee, insertMoreCoffee } = useContext(ShoppingCartContext);
 
   const coffeePrice = price * count;
 
@@ -50,12 +52,13 @@ export default function SelectedCoffee({
     const newCount = count + 1;
 
     if (newCount >= 100) {
-      alert("Qauntidade máxima de 99");
+      setMessageAlert("Qauntidade máxima de 99");
+      setVisibleAlert(true);
+      setTimeout(() => {
+        setVisibleAlert(false);
+      }, 3000);
       return;
     }
-
-    // const cartCoffee = cart.findIndex((c) => c.id === id);
-    // cart[cartCoffee].quantity = newCount;
 
     insertMoreCoffee(id, count);
     setCount(newCount);
@@ -66,7 +69,11 @@ export default function SelectedCoffee({
     const newCount = count - 1;
 
     if (newCount <= 0) {
-      alert("Minimo de 1 produto");
+      setMessageAlert("Minimo de 1 produto");
+      setVisibleAlert(true);
+      setTimeout(() => {
+        setVisibleAlert(false);
+      }, 3000);
       return;
     }
 
@@ -75,9 +82,6 @@ export default function SelectedCoffee({
   }
 
   function removeSelectedCoffee() {
-    if (cart.length === 1) {
-      return alert("Deve conter ao menos um produto no carrinho");
-    }
     removeCoffee(id);
   }
 
@@ -107,6 +111,13 @@ export default function SelectedCoffee({
       <SelectedPriceCoffee>
         {formatToBRCashString(coffeePrice)}
       </SelectedPriceCoffee>
+      {visibleAlert && (
+        <AlertMessage
+          message={messageAlert}
+          severity="danger"
+          visibility={true}
+        />
+      )}
     </SelectedCoffeeContainer>
   );
 }

@@ -20,6 +20,7 @@ import {
 } from "./style";
 
 import PurpleCart from "../../../../assets/images/purpleCart.svg";
+import AlertMessage from "../../../../components/AlertMessage";
 
 interface ICoffee {
   id: number;
@@ -42,6 +43,9 @@ interface ICoffeeItemProps {
 
 export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
   const [count, setCount] = useState(1);
+  const [messageAlert, setMessageAlert] = useState("");
+  const [visibleAlert, setVisibleAlert] = useState(false);
+  const [severity, setSeverity] = useState("");
 
   const { addCoffeeToCart, cart } = useContext(ShoppingCartContext);
 
@@ -59,7 +63,12 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
     const newCount = count + 1;
 
     if (newCount >= 100) {
-      alert("Qauntidade máxima de 99");
+      setMessageAlert("Qauntidade máxima de 99");
+      setSeverity("danger");
+      setVisibleAlert(true);
+      setTimeout(() => {
+        setVisibleAlert(false);
+      }, 3000);
       return;
     }
 
@@ -71,7 +80,12 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
     const newCount = count - 1;
 
     if (newCount <= 0) {
-      alert("Minimo de 1 produto");
+      setMessageAlert("Minimo de 1 produto");
+      setSeverity("danger");
+      setVisibleAlert(true);
+      setTimeout(() => {
+        setVisibleAlert(false);
+      }, 3000);
       return;
     }
     setCount(newCount);
@@ -93,12 +107,23 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
     const cartCoffee = cart.findIndex((c) => c.id === coffee.id);
 
     if (cartCoffee !== -1) {
-      return alert("Este item já está em seu carrinho");
+      setMessageAlert("Este item já está em seu carrinho");
+      setSeverity("danger");
+      setVisibleAlert(true);
+      setTimeout(() => {
+        setVisibleAlert(false);
+      }, 3000);
+      return;
     }
 
     addCoffeeToCart(coffeeItem as ICoffeeCart);
     setCount(1);
-    alert("Item adicionado ao carrinho");
+    setMessageAlert("Item adicionado ao carrinho");
+    setSeverity("success");
+    setVisibleAlert(true);
+    setTimeout(() => {
+      setVisibleAlert(false);
+    }, 3000);
   }
 
   return (
@@ -134,6 +159,13 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
           </button>
         </CartQuantityContainer>
       </OrderPirceContainer>
+      {visibleAlert && (
+        <AlertMessage
+          message={messageAlert}
+          severity={severity}
+          visibility={true}
+        />
+      )}
     </CoffeeCardContainer>
   );
 }

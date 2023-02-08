@@ -6,6 +6,9 @@ import { BoxSection, CartContainer, Title } from "./style";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { ShoppingCartContext } from "../../context/ShoppingCartContext";
+import AlertMessage from "../../components/AlertMessage";
 
 const adressFormValidation = zod
   .object({
@@ -22,6 +25,10 @@ const adressFormValidation = zod
 type NewCycleFormData = zod.infer<typeof adressFormValidation>;
 
 export default function Cart() {
+  const [visibleAlert, setVisibleAlert] = useState(false);
+
+  const { cart } = useContext(ShoppingCartContext);
+
   const navigate = useNavigate();
 
   const adressForm = useForm<NewCycleFormData>({
@@ -38,6 +45,14 @@ export default function Cart() {
     localStorage.setItem("coffeeDelivery-city", values.city);
     localStorage.setItem("coffeeDelivery-uf", values.uf);
 
+    if (cart.length === 0) {
+      setVisibleAlert(true);
+      setTimeout(() => {
+        setVisibleAlert(false);
+      }, 3000);
+
+      return;
+    }
     navigate("/orderInfo");
   }
 
@@ -62,6 +77,13 @@ export default function Cart() {
           </div>
         </CartContainer>
       </form>
+      {visibleAlert && (
+        <AlertMessage
+          message="Deve conter ao menos um produto no carrinho"
+          severity="danger"
+          visibility={true}
+        />
+      )}
     </FormProvider>
   );
 }

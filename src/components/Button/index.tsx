@@ -7,7 +7,7 @@ interface IButton {
 
 export default function Button({ title, image }: IButton) {
   return (
-    <ButtonAction onClick={() => alert("click")} disabled>
+    <ButtonAction disabled>
       <img src={image} alt="" />
       {title && <span>{title}</span>}
     </ButtonAction>
