@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const HomeContainer = styled.div``;
+export const HomeContainer = styled.div`
+  h2 {
+    font-family: "Baloo 2";
+    color: ${(props) => props.theme["base-text"]};
+  }
+`;
 
 export const InfoContainer = styled.div`
   display: flex;
@@ -29,6 +34,7 @@ export const Title = styled.h1`
   font-weight: 800;
   font-size: 48px;
   line-height: 130%;
+  font-family: "Baloo 2";
 
   flex: none;
   order: 0;

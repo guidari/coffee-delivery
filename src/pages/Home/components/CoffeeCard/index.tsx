@@ -21,6 +21,7 @@ import {
 
 import PurpleCart from "../../../../assets/images/purpleCart.svg";
 import AlertMessage from "../../../../components/AlertMessage";
+import { formatToBRCashString } from "../../../../utils/formatCashString";
 
 interface ICoffee {
   id: number;
@@ -143,7 +144,7 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
 
       <OrderPirceContainer>
         <PriceTag>
-          <span>R$ {coffee.price}0</span>
+          R$<span>{formatToBRCashString(coffee.price)}</span>
         </PriceTag>
         <CartQuantityContainer>
           <InputCount

@@ -20,6 +20,7 @@ export const Title = styled.div`
   line-height: 130%;
   margin-bottom: 15px;
   color: ${(props) => props.theme["base-subtitle"]};
+  font-family: "Baloo 2";
 `;
 
 export const BoxSection = styled.div`

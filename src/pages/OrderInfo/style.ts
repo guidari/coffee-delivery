@@ -18,6 +18,7 @@ export const LeftContainer = styled.div`
     font-size: 32px;
     line-height: 130%;
     color: ${(props) => props.theme["yellow-dark"]};
+    font-family: "Baloo 2";
   }
 
   h2 {

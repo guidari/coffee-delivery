@@ -95,7 +95,7 @@ export default function SelectedCoffee({
         <ContainerNamePrice>
           <SelectedQuantityCoffee>{name}</SelectedQuantityCoffee>
           <SelectedPriceCoffee>
-            <span> R$ {formatToBRCashString(coffeePrice)}</span>
+            R$ {formatToBRCashString(coffeePrice)}
           </SelectedPriceCoffee>
         </ContainerNamePrice>
 

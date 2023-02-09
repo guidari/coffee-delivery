@@ -90,10 +90,13 @@ export const OrderPirceContainer = styled.div`
 `;
 
 export const PriceTag = styled.div`
+  font-weight: 400;
+  font-size: 14px;
+  color: ${(props) => props.theme["base-text"]};
+
   span {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 130%;
+    font-weight: 800;
+    font-size: 24px;
     color: ${(props) => props.theme["base-text"]};
   }
 `;
