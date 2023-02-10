@@ -1,6 +1,6 @@
 import { ButtonAction } from "./style";
 
-interface IButton {
+export interface IButton {
   title?: string;
   image?: string;
 }
@@ -8,7 +8,7 @@ interface IButton {
 export default function Button({ title, image }: IButton) {
   return (
     <ButtonAction disabled>
-      <img src={image} alt="" />
+      <img src={image} alt={title ? title : ""} />
       {title && <span>{title}</span>}
     </ButtonAction>
   );
