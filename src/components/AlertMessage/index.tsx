@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AlertMessageContainer } from "./style";
 
-interface IAlerMessage {
+export interface IAlerMessage {
   message: string;
   severity?: string;
   visibility: boolean;
