@@ -4,7 +4,7 @@ import { ButtonCart, ItemsAmount } from "./style";
 
 import cartImage from "../../assets/images/cart.svg";
 
-interface ICartButton {
+export interface ICartButton {
   image?: string;
   onClick?: any;
 }

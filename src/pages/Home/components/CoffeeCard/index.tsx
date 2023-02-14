@@ -23,7 +23,7 @@ import PurpleCart from "../../../../assets/images/purpleCart.svg";
 import AlertMessage from "../../../../components/AlertMessage";
 import { formatToBRCashString } from "../../../../utils/formatCashString";
 
-interface ICoffee {
+export interface ICoffee {
   id: number;
   name: string;
   description: string;

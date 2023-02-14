@@ -6,7 +6,6 @@ export default {
   title: "Components/Button",
   component: Button,
   args: {
-    //👇 Now all Button stories will be primary.
     title: "Button",
     image: PurpleLocation,
   },
@@ -15,8 +14,6 @@ export default {
       return <div style={{ width: "150px" }}>{Story()}</div>;
     },
   ],
-} as Meta;
-
-// const Template = (args: IButton) => <Button {...args} />;
+} as Meta<IButton>;
 
 export const Default = {};
