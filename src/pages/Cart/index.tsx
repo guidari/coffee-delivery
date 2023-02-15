@@ -22,7 +22,7 @@ const adressFormValidation = zod
   })
   .required();
 
-type NewCycleFormData = zod.infer<typeof adressFormValidation>;
+export type AdressFormData = zod.infer<typeof adressFormValidation>;
 
 export default function Cart() {
   const [visibleAlert, setVisibleAlert] = useState(false);
@@ -31,13 +31,13 @@ export default function Cart() {
 
   const navigate = useNavigate();
 
-  const adressForm = useForm<NewCycleFormData>({
+  const adressForm = useForm<AdressFormData>({
     resolver: zodResolver(adressFormValidation),
   });
 
   console.log("errors", adressForm.formState.errors);
 
-  function confirmOrder(values: NewCycleFormData) {
+  function confirmOrder(values: AdressFormData) {
     localStorage.setItem("coffeeDelivery-cep", values.cep);
     localStorage.setItem("coffeeDelivery-street", values.street);
     localStorage.setItem("coffeeDelivery-homeNumber", values.homeNumber);

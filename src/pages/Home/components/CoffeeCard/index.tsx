@@ -130,21 +130,21 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
   return (
     <CoffeeCardContainer>
       <Coffeeonatiner>
-        <CoffeeImage src={coffee.image} alt={coffee.name} />
+        <CoffeeImage src={coffee?.image} alt={coffee?.name} />
       </Coffeeonatiner>
 
       <CoffeeTagsContainer>
-        {coffee.tags.map((tag) => {
+        {coffee?.tags.map((tag) => {
           return <CoffeeType key={tag}>{tag}</CoffeeType>;
         })}
       </CoffeeTagsContainer>
 
-      <Title>{coffee.name}</Title>
-      <SubTitle>{coffee.description}</SubTitle>
+      <Title>{coffee?.name}</Title>
+      <SubTitle>{coffee?.description}</SubTitle>
 
       <OrderPirceContainer>
         <PriceTag>
-          R$<span>{formatToBRCashString(coffee.price)}</span>
+          R$<span>{formatToBRCashString(coffee?.price)}</span>
         </PriceTag>
         <CartQuantityContainer>
           <InputCount

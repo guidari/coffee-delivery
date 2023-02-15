@@ -23,13 +23,13 @@ export default function Header() {
   return (
     <HeaderContainer>
       <NavLink to={"/"}>
-        <Logo src={LogoImage} alt="teste" />
+        <Logo src={LogoImage} alt="Logo" />
       </NavLink>
 
       <HeaderCart>
         <Button title="São Paulo, SP" image={PurpleLocation} />
 
-        {cart.length < 1 ? (
+        {cart?.length < 1 ? (
           <CartButton onClick={warning} />
         ) : (
           <NavLink to={"/cart"}>

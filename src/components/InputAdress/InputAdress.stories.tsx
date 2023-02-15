@@ -1,6 +1,14 @@
 import { Meta, StoryObj, ComponentMeta } from "@storybook/react";
 import InputAdress from "./index";
 import cartImage from "../../assets/images/cart.svg";
+import { FormProvider, useForm } from "react-hook-form";
+import { AdressFormData } from "../../pages/Cart";
+
+const Wrapper = (props: any) => {
+  const formMethods = useForm<AdressFormData>();
+
+  return <FormProvider {...formMethods}>{props.children}</FormProvider>;
+};
 
 export default {
   title: "Components/InputAdress",
@@ -13,7 +21,7 @@ export default {
   // ],
   decorators: [
     (Story) => {
-      return <div style={{ width: "150px" }}>{Story()}</div>;
+      return <Wrapper>{Story()}</Wrapper>;
     },
   ],
 } as Meta;

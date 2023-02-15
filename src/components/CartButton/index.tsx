@@ -14,9 +14,9 @@ export default function CartButton({ image, onClick }: ICartButton) {
 
   return (
     <ButtonCart type="button" onClick={onClick}>
-      {cart.length !== 0 && (
+      {cart?.length !== 0 && (
         <ItemsAmount>
-          <span>{cart.length}</span>
+          <span>{cart?.length}</span>
         </ItemsAmount>
       )}
       <img src={cartImage} alt="carrinho" />

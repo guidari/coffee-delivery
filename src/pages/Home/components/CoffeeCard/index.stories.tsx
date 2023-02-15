@@ -6,19 +6,21 @@ export default {
   title: "Components/CoffeeCard",
   component: CoffeeCard,
   args: {
-    id: 1,
-    name: "Expresso Americano",
-    description: "Expresso diluído, menos intenso que o tradicional",
-    price: 10.9,
-    tags: ["Tradicional"],
-    image: CoffeeImage,
-    isAvaliable: true,
+    coffee: {
+      id: 1,
+      name: "Expresso Americano",
+      description: "Expresso diluído, menos intenso que o tradicional",
+      price: 10.9,
+      tags: ["Tradicional"],
+      image: CoffeeImage,
+      isAvaliable: true,
+    },
   },
-  // decorators: [
-  //   (Story) => {
-  //     return <div style={{ width: "150px" }}>{Story()}</div>;
-  //   },
-  // ],
+  decorators: [
+    (Story) => {
+      return <div style={{ width: "270px", marginTop: "20px" }}>{Story()}</div>;
+    },
+  ],
 } as Meta<ICoffee>;
 
 export const Default = {};
