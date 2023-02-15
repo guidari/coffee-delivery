@@ -13,6 +13,11 @@ const Wrapper = (props: any) => {
 export default {
   title: "Components/InputAdress",
   component: InputAdress,
+  args: {
+    placeholder: "Titulo",
+    registerName: "titulo",
+    type: "input",
+  },
 
   // decorators: [
   //   (Story) => {
@@ -21,7 +26,11 @@ export default {
   // ],
   decorators: [
     (Story) => {
-      return <Wrapper>{Story()}</Wrapper>;
+      return (
+        <Wrapper>
+          <div style={{ width: "200px" }}>{Story()}</div>
+        </Wrapper>
+      );
     },
   ],
 } as Meta;

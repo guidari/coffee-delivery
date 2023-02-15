@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <NavLink to={"/"}>
-        <Logo src={LogoImage} alt="Logo" />
+        <Logo src={LogoImage} alt="logo" />
       </NavLink>
 
       <HeaderCart>

@@ -18,8 +18,6 @@ describe("InputAdress component", () => {
       </Wrapper>
     );
 
-    debug();
-
     expect(screen.queryByPlaceholderText("titulo")).toBeInTheDocument();
   });
 });

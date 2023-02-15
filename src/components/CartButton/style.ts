@@ -17,11 +17,13 @@ export const ItemsAmount = styled.div`
   background-color: ${(props) => props.theme["yellow-dark"]};
   border-radius: 50%;
   position: absolute;
+  display: flex;
+  place-items: center;
 
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.4rem;
 
-  top: -10px;
-  right: -10px;
+  top: -8px;
+  right: -8px;
 
   span {
     color: ${(props) => props.theme.white};
