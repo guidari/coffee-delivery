@@ -19,16 +19,18 @@ export function InputCount({
     <InputCountContainer>
       <button
         title="removeProductUnity"
+        data-testid="removeProductUnity"
         type="button"
         onClick={onRemoveProductUnity}
       >
         <Minus size={16} weight="bold" />
       </button>
 
-      <input type="number" {...rest} />
+      <input type="number" {...rest} data-testid="counter" />
 
       <button
         title="addOneProductUnity"
+        data-testid="addOneProductUnity"
         type="button"
         onClick={onAddOneProductUnity}
       >

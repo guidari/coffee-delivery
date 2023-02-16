@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { InputCount } from ".";
-import FakeImage from "../../assets/images/coffees/american-express.png";
 
 describe("InputCount component", () => {
   it("works correctly the buttons", async () => {
@@ -9,17 +8,17 @@ describe("InputCount component", () => {
     const mockClickRemove = jest.fn();
     const user = userEvent.setup();
 
-    const result = render(
+    render(
       <InputCount
         onAddOneProductUnity={mockClickAdd}
         onRemoveProductUnity={mockClickRemove}
       />
     );
 
-    await user.click(screen.getByTitle("addOneProductUnity"));
+    await user.click(screen.getByTestId("addOneProductUnity"));
     expect(mockClickAdd).toHaveBeenCalled();
 
-    await user.click(screen.getByTitle("removeProductUnity"));
+    await user.click(screen.getByTestId("removeProductUnity"));
     expect(mockClickRemove).toHaveBeenCalled();
   });
 });

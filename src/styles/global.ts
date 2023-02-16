@@ -12,9 +12,9 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
-  :focus {
+  /* :focus {
     outline: none;
-  }
+  } */
 
   body {
     background: ${(props: any) => props.theme.background};
@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
   button {
-    outline:0;
+    /* outline:0; */
     border:0;
     cursor: pointer;
   }
