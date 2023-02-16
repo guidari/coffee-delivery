@@ -5,14 +5,14 @@ import FakeImage from "../../assets/images/coffees/american-express.png";
 import { AdressFormData } from "../../pages/Cart";
 
 describe("InputAdress component", () => {
-  it("renders correctly", () => {
+  it("renders correctly the with the provider", () => {
     const Wrapper = (props: any) => {
       const formMethods = useForm<AdressFormData>();
 
       return <FormProvider {...formMethods}>{props.children}</FormProvider>;
     };
 
-    const { debug } = render(
+    render(
       <Wrapper>
         <InputAdress placeholder="titulo" registerName="titulo" type="button" />
       </Wrapper>

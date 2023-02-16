@@ -3,7 +3,7 @@ import CoffeeCard, { ICoffee } from "./index";
 import CoffeeImage from "../../../../assets/images/coffees/tradicional-express.png";
 
 export default {
-  title: "Components/CoffeeCard",
+  title: "Cart/Components/CoffeeCard",
   component: CoffeeCard,
   args: {
     coffee: {
