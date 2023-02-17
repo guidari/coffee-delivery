@@ -19,7 +19,7 @@ export default function PaymentBox() {
   return (
     <PaymentBoxContainer>
       <Instrunctions>
-        <img src={Money} />
+        <img src={Money} alt="Icone de dinheiro" />
         <div>
           <h3>Pagamento</h3>
           <p>
