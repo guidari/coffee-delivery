@@ -26,7 +26,8 @@ export default function InputAdress({
 
   return (
     <InputAdressContainer>
-      <label htmlFor={registerName}>
+      <label htmlFor={registerName} style={{ fontSize: 0.1 }}>
+        {registerName}
         <InputText
           aria-label={registerName}
           id={registerName}
