@@ -61,7 +61,7 @@ export const CoffeeTagsContainer = styled.div`
   gap: 4px;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.span`
   font-weight: 700;
   font-size: 20px;
   line-height: 130%;
