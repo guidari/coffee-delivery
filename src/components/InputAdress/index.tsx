@@ -26,10 +26,9 @@ export default function InputAdress({
 
   return (
     <InputAdressContainer>
-      <label htmlFor={registerName} style={{ fontSize: 0.1 }}>
-        {registerName}
+      <label htmlFor={registerName}>
         <InputText
-          aria-label={registerName}
+          aria-label={placeholder}
           id={registerName}
           placeholder={placeholder}
           {...register(registerName)}
