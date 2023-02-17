@@ -17,7 +17,7 @@ export default function AdressBox() {
   return (
     <AdressBoxContainer>
       <Instrunctions>
-        <img src={LocationYellowLine} />
+        <img src={LocationYellowLine} alt="Icone de localização" />
         <div>
           <h3>Endereço de Entrega</h3>
           <p>Informe o endereço onde deseja receber seu pedido</p>

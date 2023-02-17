@@ -4,12 +4,11 @@ import DefaultLayout from ".";
 
 describe("DefaultLayout component", () => {
   it("renders correctly", () => {
-    const { debug } = render(
+    render(
       <BrowserRouter>
         <DefaultLayout />
       </BrowserRouter>
     );
-    debug();
     expect(screen.getByAltText("logo")).toBeInTheDocument();
   });
 });

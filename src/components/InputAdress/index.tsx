@@ -26,12 +26,16 @@ export default function InputAdress({
 
   return (
     <InputAdressContainer>
-      <InputText
-        placeholder={placeholder}
-        {...register(registerName)}
-        type={type}
-        defaultValue={value ? value : ""}
-      />
+      <label>
+        <InputText
+          placeholder={placeholder}
+          {...register(registerName)}
+          type={type}
+          defaultValue={value ? value : ""}
+          aria-label={registerName}
+          name={registerName}
+        />
+      </label>
       <ErrorMessageStyleContainer>
         <ErrorMessage errors={errors} name={registerName} />
       </ErrorMessageStyleContainer>

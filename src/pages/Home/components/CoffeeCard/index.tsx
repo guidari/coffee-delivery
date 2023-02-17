@@ -105,7 +105,7 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
       quantity: count,
     };
 
-    const cartCoffee = cart.findIndex((c) => c.id === coffee.id);
+    const cartCoffee = cart?.findIndex((c) => c.id === coffee.id);
 
     if (cartCoffee !== -1) {
       setMessageAlert("Este item já está em seu carrinho");
@@ -155,7 +155,7 @@ export default function CoffeeCard({ coffee }: ICoffeeItemProps) {
             min={1}
             max={99}
           />
-          <button onClick={hanldeAddToShoppingCart}>
+          <button onClick={hanldeAddToShoppingCart} data-testid="addCart">
             <img src={PurpleCart} alt="Carrinho" />
           </button>
         </CartQuantityContainer>

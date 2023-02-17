@@ -8,7 +8,7 @@ interface IInfoTextGrid {
 export default function InfoTextGrid({ title, image }: IInfoTextGrid) {
   return (
     <InfoTextGridDiv>
-      <img src={image} alt="" />
+      <img src={image} alt={title} />
       <span>{title}</span>
     </InfoTextGridDiv>
   );

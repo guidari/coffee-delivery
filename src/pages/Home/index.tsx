@@ -41,7 +41,10 @@ export default function Home() {
           </InfoCoffeeGrid>
         </div>
         <BannerContainer>
-          <img src={Banner} alt="" />
+          <img
+            src={Banner}
+            alt="Imagem com um copo de café e grãos de café em volta"
+          />
         </BannerContainer>
       </InfoContainer>
       <h2>Nossos cafés</h2>

@@ -26,7 +26,9 @@ export function InputCount({
         <Minus size={16} weight="bold" />
       </button>
 
-      <input type="number" {...rest} data-testid="counter" />
+      <label>
+        <input type="number" {...rest} data-testid="counter" />
+      </label>
 
       <button
         title="addOneProductUnity"
