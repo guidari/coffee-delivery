@@ -26,8 +26,8 @@ export function InputCount({
         <Minus size={16} weight="bold" />
       </button>
 
-      <label>
-        <input type="number" {...rest} data-testid="counter" />
+      <label htmlFor="counter">
+        <input id="counter" type="number" {...rest} data-testid="counter" />
       </label>
 
       <button
