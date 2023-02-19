@@ -34,6 +34,7 @@ export default function InputAdress({
           {...register(registerName)}
           type={type}
           defaultValue={value ? value : ""}
+          data-testid="input"
         />
       </label>
       <ErrorMessageStyleContainer>

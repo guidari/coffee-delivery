@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Header from ".";
+import userEvent from "@testing-library/user-event";
 
 describe("Header component", () => {
   it("renders correctly", () => {
@@ -9,8 +10,34 @@ describe("Header component", () => {
         <Header />
       </BrowserRouter>
     );
+  });
 
-    expect(screen.queryByAltText("logo")).toBeInTheDocument();
-    expect(screen.queryByAltText("carrinho")).toBeInTheDocument();
+  it("should be focus on the logo", async () => {
+    render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    );
+
+    const user = userEvent.setup();
+
+    await user.tab();
+
+    expect(screen.getByTestId("logoLink")).toHaveFocus();
+  });
+
+  it("should be focus on the cart", async () => {
+    render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    );
+
+    const user = userEvent.setup();
+
+    await user.tab();
+    await user.tab();
+
+    expect(screen.getByTestId("cart")).toHaveFocus();
   });
 });

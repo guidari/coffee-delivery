@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <NavLink to={"/"}>
+      <NavLink to={"/"} data-testid="logoLink">
         <Logo src={LogoImage} alt="logo" />
       </NavLink>
 
@@ -30,9 +30,9 @@ export default function Header() {
         <Button title="São Paulo, SP" image={PurpleLocation} />
 
         {cart?.length < 1 ? (
-          <CartButton onClick={warning} />
+          <CartButton onClick={warning} data-testid="cart" />
         ) : (
-          <NavLink to={"/cart"}>
+          <NavLink to={"/cart"} data-testid="cart">
             <CartButton />
           </NavLink>
         )}

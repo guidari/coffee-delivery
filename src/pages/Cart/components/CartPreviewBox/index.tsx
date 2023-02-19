@@ -21,15 +21,15 @@ export default function CartPreview() {
   let totalPrice = 3.5;
   let totalPriceNoShipping = 0;
 
-  for (let i = 0; i < cart.length; i++) {
+  for (let i = 0; i < cart?.length; i++) {
     totalPrice += cart[i].price * cart[i].quantity;
     totalPriceNoShipping += cart[i].price * cart[i].quantity;
   }
 
   return (
     <CartPreviewContainer>
-      {cart.length < 1 && <EmptyCart>O carrinho está vazio</EmptyCart>}
-      {cart.map((coffee: any) => {
+      {cart?.length < 1 && <EmptyCart>O carrinho está vazio</EmptyCart>}
+      {cart?.map((coffee: any) => {
         return (
           <SelectedCoffee
             key={coffee.id}

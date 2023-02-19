@@ -14,6 +14,8 @@ export default {
     "!src/**/*.test.{tsx}",
     "!src/**/*.stories.tsx",
     "!src/**/App.tsx",
+    "!src/**/Router.tsx",
+    "!src/**/main.tsx",
   ],
   coverageReporters: ["json", "lcov"],
   testEnvironment: "jsdom",

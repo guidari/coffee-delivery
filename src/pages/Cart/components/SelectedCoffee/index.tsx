@@ -108,7 +108,10 @@ export default function SelectedCoffee({
             min={1}
             max={99}
           />
-          <RemoveCoffee onClick={removeSelectedCoffee}>
+          <RemoveCoffee
+            onClick={removeSelectedCoffee}
+            data-testid="removeCoffee"
+          >
             <Trash color="purple" />
             <span>remover</span>
           </RemoveCoffee>

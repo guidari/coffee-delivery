@@ -34,18 +34,21 @@ export default function PaymentBox() {
           image={CreditCard}
           onClick={() => changeCard("credit")}
           selected={cardSelected}
+          data-testid="creditCard"
         />
         <PaymentType
           title="debit"
           image={DebitCard}
           onClick={() => changeCard("debit")}
           selected={cardSelected}
+          data-testid="debitCard"
         />
         <PaymentType
           title="cash"
           image={Cash}
           onClick={() => changeCard("cash")}
           selected={cardSelected}
+          data-testid="cash"
         />
       </PaymentTypes>
     </PaymentBoxContainer>

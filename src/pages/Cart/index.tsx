@@ -35,8 +35,6 @@ export default function Cart() {
     resolver: zodResolver(adressFormValidation),
   });
 
-  console.log("errors", adressForm.formState.errors);
-
   function confirmOrder(values: AdressFormData) {
     localStorage.setItem("coffeeDelivery-cep", values.cep);
     localStorage.setItem("coffeeDelivery-street", values.street);

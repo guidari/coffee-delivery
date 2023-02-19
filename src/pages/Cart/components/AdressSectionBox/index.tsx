@@ -12,8 +12,6 @@ import {
 import LocationYellowLine from "../../../../assets/images/locationYellowLine.svg";
 
 export default function AdressBox() {
-  const cardTye = localStorage.getItem("coffeeDelivery-cardType");
-
   return (
     <AdressBoxContainer>
       <Instrunctions>

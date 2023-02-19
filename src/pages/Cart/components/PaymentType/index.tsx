@@ -1,7 +1,7 @@
 import { MouseEventHandler, useEffect, useState } from "react";
 import { PaymentTypeContainer, SelectedCard } from "./style";
 
-interface IPaymentType {
+export interface IPaymentType {
   title: string;
   image: string;
   onClick: MouseEventHandler;
@@ -13,6 +13,7 @@ export default function PaymentType({
   image,
   onClick,
   selected,
+  ...rest
 }: IPaymentType) {
   const [titleCrad, setTitleCard] = useState("");
 
@@ -29,12 +30,20 @@ export default function PaymentType({
   return (
     <>
       {selected === title ? (
-        <SelectedCard onClick={onClick} className="selectedCard">
+        <SelectedCard
+          onClick={onClick}
+          className="selectedCard active"
+          {...rest}
+        >
           <img src={image} alt={titleCrad} />
           <span>{titleCrad}</span>
         </SelectedCard>
       ) : (
-        <PaymentTypeContainer onClick={onClick} className="selectedCard">
+        <PaymentTypeContainer
+          onClick={onClick}
+          className="selectedCard"
+          {...rest}
+        >
           <img src={image} alt={titleCrad} />
           <span>{titleCrad}</span>
         </PaymentTypeContainer>
