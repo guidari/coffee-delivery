@@ -8,7 +8,7 @@ export interface IButton {
 export default function Button({ title, image }: IButton) {
   return (
     <ButtonAction disabled>
-      <img src={image} alt={title ? title : ""} />
+      <img src={image} alt={title ? title : "Icone"} />
       {title && <span>{title}</span>}
     </ButtonAction>
   );

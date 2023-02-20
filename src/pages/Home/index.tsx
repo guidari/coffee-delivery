@@ -47,7 +47,7 @@ export default function Home() {
           />
         </BannerContainer>
       </InfoContainer>
-      <h2>Nossos cafés</h2>
+      <h2 id="main">Nossos cafés</h2>
 
       <CoffeesGird>
         {coffeesList.map((coffee) => {

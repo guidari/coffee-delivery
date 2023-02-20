@@ -22,9 +22,14 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <NavLink to={"/"} data-testid="logoLink">
-        <Logo src={LogoImage} alt="logo" />
-      </NavLink>
+      <div>
+        <a href="#main" style={{ opacity: 0, fontSize: 0.1 }}>
+          .
+        </a>
+        <NavLink to={"/"} data-testid="logoLink">
+          <Logo src={LogoImage} alt="logo" />
+        </NavLink>
+      </div>
 
       <HeaderCart>
         <Button title="São Paulo, SP" image={PurpleLocation} />
