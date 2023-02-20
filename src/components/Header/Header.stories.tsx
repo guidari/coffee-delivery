@@ -3,6 +3,7 @@ import Header from "./index";
 import cartImage from "../../assets/images/cart.svg";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HeaderContainer } from "./style";
+import { ShoppingCartProvider } from "../../context/ShoppingCartContext";
 
 const cart = ["1", "2"];
 
@@ -18,9 +19,11 @@ export default {
   decorators: [
     (Story) => {
       return (
-        <BrowserRouter>
-          <div style={{ width: "80%" }}>{Story()}</div>
-        </BrowserRouter>
+        <ShoppingCartProvider>
+          <BrowserRouter>
+            <div style={{ width: "80%" }}>{Story()}</div>
+          </BrowserRouter>
+        </ShoppingCartProvider>
       );
     },
   ],

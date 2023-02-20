@@ -1,6 +1,7 @@
 import { Meta, StoryObj, ComponentMeta } from "@storybook/react";
 import CoffeeCard, { ICoffee } from "./index";
 import CoffeeImage from "../../../../assets/images/coffees/tradicional-express.png";
+import { ShoppingCartProvider } from "../../../../context/ShoppingCartContext";
 
 export default {
   title: "Home/Components/CoffeeCard",
@@ -18,7 +19,11 @@ export default {
   },
   decorators: [
     (Story) => {
-      return <div style={{ width: "270px", marginTop: "20px" }}>{Story()}</div>;
+      return (
+        <ShoppingCartProvider>
+          <div style={{ width: "270px", marginTop: "20px" }}>{Story()}</div>
+        </ShoppingCartProvider>
+      );
     },
   ],
 } as Meta<ICoffee>;

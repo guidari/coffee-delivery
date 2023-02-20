@@ -23,8 +23,12 @@ export default function Header() {
   return (
     <HeaderContainer>
       <div>
-        <a href="#main" style={{ opacity: 0, fontSize: 0.1 }}>
-          .
+        <a
+          href="#main"
+          title="ir para o conteudo da página"
+          style={{ opacity: 0, fontSize: 0.001 }}
+        >
+          ir para o conteudo da página
         </a>
         <NavLink to={"/"} data-testid="logoLink">
           <Logo src={LogoImage} alt="logo" />

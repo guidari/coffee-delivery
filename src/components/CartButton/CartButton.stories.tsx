@@ -2,6 +2,7 @@ import { Meta, StoryObj, ComponentMeta } from "@storybook/react";
 import CartButton, { ICartButton } from "./index";
 import cartImage from "../../assets/images/cart.svg";
 import { ItemsAmount } from "./style";
+import { ShoppingCartProvider } from "../../context/ShoppingCartContext";
 
 export default {
   title: "Components/CartButton",
@@ -11,7 +12,11 @@ export default {
   },
   decorators: [
     (Story) => {
-      return <div style={{ width: "100%" }}>{Story()}</div>;
+      return (
+        <ShoppingCartProvider>
+          <div style={{ width: "100%" }}>{Story()}</div>
+        </ShoppingCartProvider>
+      );
     },
   ],
 } as Meta<ICartButton>;
