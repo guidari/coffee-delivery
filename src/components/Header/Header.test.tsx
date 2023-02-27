@@ -12,6 +12,20 @@ describe("Header component", () => {
     );
   });
 
+  it("should be focus on the link to the main content", async () => {
+    render(
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
+    );
+
+    const user = userEvent.setup();
+
+    await user.tab();
+
+    expect(screen.getByTestId("mainContent")).toHaveFocus();
+  });
+
   it("should be focus on the logo", async () => {
     render(
       <BrowserRouter>
@@ -21,6 +35,7 @@ describe("Header component", () => {
 
     const user = userEvent.setup();
 
+    await user.tab();
     await user.tab();
 
     expect(screen.getByTestId("logoLink")).toHaveFocus();
@@ -35,6 +50,7 @@ describe("Header component", () => {
 
     const user = userEvent.setup();
 
+    await user.tab();
     await user.tab();
     await user.tab();
 

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ShoppingCartContext } from "../../context/ShoppingCartContext";
-import Button from "../Button";
+import Button from "./components/Button";
 import CartButton from "../CartButton";
 import { HeaderCart, HeaderContainer, Logo } from "./style";
 
@@ -27,6 +27,7 @@ export default function Header() {
           href="#main"
           title="ir para o conteudo da página"
           style={{ opacity: 0, fontSize: 0.001 }}
+          data-testid="mainContent"
         >
           ir para o conteudo da página
         </a>
