@@ -24,7 +24,7 @@ interface ShoppingCartContextData {
   cart: ICoffeeCart[];
   addCoffeeToCart: (coffee: ICoffeeCart) => void;
   removeCoffee: (id: number) => void;
-  insertMoreCoffee: (id: string, count: number, numberCount: number) => void;
+  insertMoreCoffee: (id: number, count: number, numberCount: number) => void;
 }
 
 export const ShoppingCartContext = createContext<ShoppingCartContextData>(
@@ -42,7 +42,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     dispatch(removeCoffeeAction(id));
   }
 
-  function insertMoreCoffee(id: string, count: number, numberCount: number) {
+  function insertMoreCoffee(id: number, count: number, numberCount: number) {
     dispatch(insertMoreCoffeeAction(id, count, numberCount));
   }
 
