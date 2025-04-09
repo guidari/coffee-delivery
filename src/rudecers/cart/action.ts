@@ -25,7 +25,7 @@ export function removeCoffeeAction(id: number) {
 }
 
 export function insertMoreCoffeeAction(
-  id: string,
+  id: number,
   count: number,
   numberCount: number
 ) {
