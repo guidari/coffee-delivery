@@ -61,7 +61,7 @@ export default function SelectedCoffee({
       return;
     }
 
-    insertMoreCoffee(id, count);
+    insertMoreCoffee(id, count, 1);
     setCount(newCount);
   }
 
@@ -78,7 +78,7 @@ export default function SelectedCoffee({
       return;
     }
 
-    insertMoreCoffee(id, count);
+    insertMoreCoffee(id, count, -1);
     setCount(newCount);
   }
 
